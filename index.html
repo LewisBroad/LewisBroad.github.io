@@ -26,16 +26,17 @@
       position: relative;
       padding-top: 60px;
       padding-bottom: 40px;
-      
     }
+
     header h1 {
       font-size: 2.5em;
       margin-bottom: 40px;
     }
+
     /* YouTube Video in the header */
     .header-video {
-      position:  relative;
-      top: 20px;  /* Adjust position lower than the text */
+      position: relative;
+      top: 20px;
       left: 50%;
       transform: translateX(-95%);
       width: 100%;
@@ -49,6 +50,64 @@
       margin: 20px auto;
     }
 
+    /* Section Header Style */
+    section h2 {
+      font-size: 2em;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    section p {
+      font-size: 1.1em;
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+
+
+    /* About Me Section */
+    .about-me {
+      background-color: #e4e4e4;
+      padding: 40px 20px;
+      border-radius: 8px;
+      margin-bottom: 40px;
+    }
+
+    .about-me p {
+      color: #555;
+    }
+
+    /* Passion Section */
+    .passion {
+      background-color: #f0f0f0;
+      padding: 40px 20px;
+      border-radius: 8px;
+      margin-bottom: 40px;
+    }
+
+    .passion p {
+      color: #555;
+    }
+
+    /* Skills Section */
+    .skills {
+      background-color: #e4e4e4;
+      padding: 40px 20px;
+      border-radius: 8px;
+      margin-bottom: 40px;
+    }
+
+    .skills ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .skills li {
+      font-size: 1.2em;
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+
     /* Gallery Section */
     .gallery {
       display: grid;
@@ -57,21 +116,39 @@
       max-width: 100%;
       margin-top: 40px;
     }
-    .gallery img {
+
+    /* First image: Fixed size */
+    .gallery .first-image {
       width: 100%;
+      max-width: 400px; /* Fixed width for the first image */
       height: auto;
+      object-fit: contain; /* Prevents stretching */
       border-radius: 8px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      display: block;
+      margin: 0 auto;
+    }
+
+    /* Other images: Adjustable size */
+    .gallery .other-images img {
+      width: 100%;
+      height: auto;
+      object-fit: contain; /* Prevents stretching */
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      display: block;
+      margin: 0 auto;
     }
 
     /* Video Section */
     .video-section {
-        display: flex;
+      display: flex;
       flex-wrap: wrap;
       gap: 20px;
       justify-content: center;
-      margin-top: 40px; /* Space above the video section */
+      margin-top: 40px;
     }
+
     .video {
       width: 100%;
       max-width: 600px;
@@ -79,6 +156,7 @@
       overflow: hidden;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
+
     .video iframe {
       width: 100%;
       height: 315px;
@@ -91,6 +169,7 @@
       padding: 20px;
       text-align: center;
     }
+
     footer p {
       font-size: 1em;
     }
@@ -106,38 +185,67 @@
       allow="autoplay; encrypted-media; picture-in-picture" 
       allowfullscreen>
     </iframe>
-  
   </header>
 
   <div class="container">
 
+    <!-- About Me Section (Optional) -->
+    <section class="about-me">
+      <h2>About Me</h2>
+      <p> 
+        I am currently studying computer games development at Buckinghamshire New University. <br>On this course I am learning different game development techniques as well as also learning computing such as agile software development and networking.
+      </p>
+    </section>
+
+    <!-- Passion Section -->
+    <section class="passion">
+      <h2>My Passion</h2>
+      <p>I am deeply passionate about creating unique experiences for players.
+        I have worked on a few different variants of games during my studies. in different areas of development such as level design, character design, programming and animation. Out of all these, personally see myself drawn towards being a gameplay or level designer. Bringing ideas to life inside of a video game.</p>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills">
+      <h2>My Skills</h2>
+      <p>With a diverse set of skills, I work across various platforms and technologies. Below are some of the key skills I bring to the table:</p>
+      <ul>
+        <li>Game Design & Development</li>
+        <li>Unreal Engine 5 C++ & Blueprints</li>
+        <li>Unity Engine C#</li>
+        <li>3D Modeling & Animation inside 3ds Max & Maya</li>
+        <li>Working on my own and in team projects</li>
+      </ul>
+    </section>
+
     <!-- Gallery Section -->
     <section class="Projects">
-      <h2>My Projects</h2> 
+      <h2>My Projects</h2>
       <div class="gallery">
+        <!-- First Image: Fixed size -->
         <div>
           <a href="https://landturtle.itch.io/funky-ride" target="_blank">
-            <img src="5UNUpv.png" alt="Project 1 - Funky Ride">
+            <img class="first-image" src="5UNUpv.png" alt="Project 1 - Funky Ride">
           </a>
         </div>
-        <div>
+        
+        <!-- Other Images: Adjustable size -->
+        <div class="other-images">
           <a href="https://landturtle.itch.io/baldy2" target="_blank">
             <img src="6mgsEx.jpg" alt="Project 2 - Baldy vs Zombie2">
           </a>
         </div>
-        <div>
+
+        <div class="other-images">
           <a href="https://plainhades.itch.io/basically-naked" target="_blank">
             <img src="wj+H7L.png" alt="Project 3 - Basically Naked">
           </a>
         </div>
-        <div>
-          
-            <img src="Sequence 01.gif" alt="Project 4 - Fight Lab">
-          
+
+        <div class="other-images">
+          <img src="Sequence 01.gif" alt="Project 4 - Fight Lab">
         </div>
       </div>
     </section>
-
 
     <!-- Video Section -->
     <section class="video-section">
