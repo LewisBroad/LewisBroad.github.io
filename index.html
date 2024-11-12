@@ -26,24 +26,31 @@
       position: relative;
       padding-top: 60px;
       padding-bottom: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center; /* Centers content horizontally */
+      align-items: center; /* Centers content vertically */
+      min-height: 500px; /* Ensure the header has a sufficient height */
     }
 
     header h1 {
       font-size: 2.5em;
-      margin-bottom: 40px;
+      margin-bottom: 20px;
+    }
+    header h3{
+      font-size:1.5em;
+      margin-bottom:20px;
     }
 
     /* YouTube Video in the header */
     .header-video {
-      position: relative;
-      top: 20px;
-      left: 50%;
-      transform: translateX(-95%);
       width: 100%;
-      max-width: 1000px;
-      height: 500px;
+      max-width: 1000px; /* Adjusts the max width of the video */
+      height: auto;
+      aspect-ratio: 16/9; /* Maintains the 16:9 aspect ratio */
       border: none;
     }
+    
 
     .container {
       width: 80%;
@@ -188,7 +195,8 @@
 <body>
 
   <header>
-    <h1>Lewis Andrew Broad</h1>
+    <h1>Lewis Andrew Broad<br></h1>
+    <h3>(BSc) Computer Games Development</h3>
     <iframe class="header-video" 
       src="https://www.youtube.com/embed/WHjdcN3fpZ4?autoplay=1&mute=1&controls=0&loop=1" 
       frameborder="0" 
