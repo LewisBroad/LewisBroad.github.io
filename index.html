@@ -52,8 +52,9 @@
     /* Gallery Section */
     .gallery {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
       gap: 20px;
+      max-width: 100%;
       margin-top: 40px;
     }
     .gallery img {
@@ -111,21 +112,32 @@
   <div class="container">
 
     <!-- Gallery Section -->
-    <section class="gallery">
-      <h2>My Work</h2>
-      <div>
-        <img src="5UNUpv.png" alt="Project 1 - Funky Ride">
-      </div>
-      <div>
-        <img src="6mgsEx.jpg" alt="Project 2 - Baldy vs Zombie2">
-      </div>
-      <div>
-        <img src="wj+H7L.png" alt="Project 3 - Basically Naked">
-      </div>
-      <div>
-        <img src="image4.jpg" alt="Project 4">
+    <section class="Projects">
+      <h2>My Projects</h2> 
+      <div class="gallery">
+        <div>
+          <a href="https://landturtle.itch.io/funky-ride" target="_blank">
+            <img src="5UNUpv.png" alt="Project 1 - Funky Ride">
+          </a>
+        </div>
+        <div>
+          <a href="https://link-to-project-2.com" target="_blank">
+            <img src="6mgsEx.jpg" alt="Project 2 - Baldy vs Zombie2">
+          </a>
+        </div>
+        <div>
+          <a href="https://link-to-project-3.com" target="_blank">
+            <img src="wj+H7L.png" alt="Project 3 - Basically Naked">
+          </a>
+        </div>
+        <div>
+          <a href="https://link-to-project-4.com" target="_blank">
+            <img src="Sequence 01.gif" alt="Project 4 - Fight Lab">
+          </a>
+        </div>
       </div>
     </section>
+
 
     <!-- Video Section -->
     <section class="video-section">
