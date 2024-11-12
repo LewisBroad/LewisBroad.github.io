@@ -1,7 +1,148 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Lewis Andrew Broad Portfolio">
+  <title>Lewis Andrew Broad Portfolio</title>
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+
+    header {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      position: relative;
+      padding-top: 60px;
+      padding-bottom: 40px;
+      
+    }
+    header h1 {
+      font-size: 2.5em;
+      margin-bottom: 40px;
+    }
+    /* YouTube Video in the header */
+    .header-video {
+      position:  relative;
+      top: 20px;  /* Adjust position lower than the text */
+      left: 50%;
+      transform: translateX(-95%);
+      width: 100%;
+      max-width: 1000px;
+      height: 500px;
+      border: none;
+    }
+
+    .container {
+      width: 80%;
+      margin: 20px auto;
+    }
+
+    /* Gallery Section */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 20px;
+      margin-top: 40px;
+    }
+    .gallery img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Video Section */
+    .video-section {
+        display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      margin-top: 40px; /* Space above the video section */
+    }
+    .video {
+      width: 100%;
+      max-width: 600px;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .video iframe {
+      width: 100%;
+      height: 315px;
+    }
+
+    /* Footer Section */
+    footer {
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+    footer p {
+      font-size: 1em;
+    }
+  </style>
+</head>
 <body>
-<h1>Lewis Andrew Broad</h1>
-<p>BSc (Hons) Computer Games Development</p>
+
+  <header>
+    <h1>Lewis Andrew Broad</h1>
+    <iframe class="header-video" 
+      src="https://www.youtube.com/embed/WHjdcN3fpZ4?autoplay=1&mute=1&controls=0&loop=1" 
+      frameborder="0" 
+      allow="autoplay; encrypted-media; picture-in-picture" 
+      allowfullscreen>
+    </iframe>
+  
+  </header>
+
+  <div class="container">
+
+    <!-- Gallery Section -->
+    <section class="gallery">
+      <h2>My Work</h2>
+      <div>
+        ![Screenshot of a comment on a GitHub issue showing an image, added in the Markdown, of an Octocat smiling and raising a tentacle.](/5UNUpv.png) alt="Project 1">
+      </div>
+      <div>
+        <img src="image2.jpg" alt="Project 2">
+      </div>
+      <div>
+        <img src="image3.jpg" alt="Project 3">
+      </div>
+      <div>
+        <img src="image4.jpg" alt="Project 4">
+      </div>
+    </section>
+
+    <!-- Video Section -->
+    <section class="video-section">
+      <h2>My Videos</h2>
+      <div class="video">
+        <iframe src="https://www.youtube.com/embed/WHjdcN3fpZ4?autoplay=1" title="Video 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <div class="video">
+        <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY" title="Video 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </section>
+
+  </div>
+
+  <footer>
+    <p>&copy; 2024 Lewis Andrew Broad. All rights reserved.</p>
+  </footer>
+
 </body>
 </html>
