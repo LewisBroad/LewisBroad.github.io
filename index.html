@@ -192,6 +192,32 @@
       min-width: 300px;
       margin-right: 20px;
     }
+    /* Gallery Layout: Responsive Grid */
+  .project-showcase .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Makes the grid responsive */
+    gap: 20px;
+    width: 100%;
+    margin-top:20 px;
+  }
+
+/* Gallery Item Styling */
+  .project-showcase .gallery-item img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: block;
+    margin: 0 auto;
+  }
+
+/* For images that might be too wide (first image in showcase) */
+  .project-showcase .first-image {
+    max-width: 400px; /* Fixed max-width for the first image */
+    margin: 0 auto;
+  }
+
 
     .project-showcase .video-wrapper {
       flex: 1;
@@ -330,7 +356,7 @@
       <section class="project-showcase">
         <div class="text">
           <h2>Project 1: Funky Ride</h2>
-          <p>TMy first project was made in unity. 
+          <p>My first project was made in unity. 
             It was a racing game. We were graded on the overall level design and not just the coding elements of the level. 
             We were encouraged to use the asset store using assets that fit our overall theme.  I created a race track in the country with a lake, forest and mountains. 
             I enjoyed decorating the map with models such as the hot air balloons, fan stands, emergency vehicles and a penguin.
@@ -338,8 +364,9 @@
           </p>
         </div>
         <div class="video-wrapper">
-          <iframe src="https://www.youtube.com/embed/Pp1vs8c64cY?autoplay=1&mute=1&controls=0&loop=1&playlist=Pp1vs8c64cY" title="Project 1 Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
+          <div class="video" data-src="https://www.youtube.com/embed/Pp1vs8c64cY?autoplay=1&mute=1&controls=0&loop=1&playlist=Pp1vs8c64cY">
+            <img src="https://img.youtube.com/vi/Pp1vs8c64cY/hqdefault.jpg" alt="Funky Ride Project Video">
+          </div>
       </section>
   
       <!-- Repeat the Project Showcase Section for more projects -->
@@ -353,9 +380,11 @@
             To fix this, I had a separate entity for the gun that follows the player and fires from that.</p>
         </div>
         <div class="video-wrapper">
-          <iframe src="https://www.youtube.com/embed/H8u_22RNVto?autoplay=1&mute=1&controls=0&loop=1&playlist=H8u_22RNVto" title="Project 2 Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
+          <div class="video" data-src="https://www.youtube.com/embed/H8u_22RNVto?autoplay=1&mute=1&controls=0&loop=1&playlist=H8u_22RNVto">
+            <img src="https://img.youtube.com/vi/H8u_22RNVto/hqdefault.jpg" alt="Baldy vs Zombie2 Project Video">
+          </div>
       </section>
+
       <section class="project-showcase">
         <div class="text">
           <h2>Unreal Engine: Fight Lab</h2>
@@ -365,8 +394,10 @@
             The aim is to defeat all the enemies and that will allow the player to proceed through a portal.</p>
         </div>
         <div class="video-wrapper">
-          <iframe src="https://www.youtube.com/embed/tJhYNbTKX9s?autoplay=1&mute=1&controls=0&loop=1&playlist=tJhYNbTKX9s" title="Project 2 Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <div class="video" data-src="https://www.youtube.com/embed/tJhYNbTKX9s?autoplay=1&mute=1&controls=0&loop=1&playlist=tJhYNbTKX9s">
+            <img src="https://img.youtube.com/vi/tJhYNbTKX9s/hqdefault.jpg" alt="Fight Lab Video">
         </div>
+
       </section>
       <section class="project-showcase">
         <div class="text">
@@ -377,9 +408,11 @@
             Upon hitting half health, the boss' speed will double and they will shoot homing missiles at the player.</p>
         </div>
         <div class="video-wrapper">
-          <iframe src="https://www.youtube.com/embed/Z0flcjagu8Y?autoplay=1&mute=1&controls=0&loop=1&playlist=Z0flcjagu8Y" title="Project 2 Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <div class = "video" data-src="https://www.youtube.com/embed/Z0flcjagu8Y?autoplay=1&mute=1&controls=0&loop=1&playlist=Z0flcjagu8Y">
+          <img src="https://img.youtube.com/vi/Z0flcjagu8Y/hqdefault.jpg" alt="Game Jam">
         </div>
       </section>
+
       <section class="project-showcase">
         <div class="text">
           <h2>Animation</h2>
@@ -391,10 +424,59 @@
           </p>
         </div>
         <div class="video-wrapper">
-          <iframe src="https://www.youtube.com/embed/qT9Ug3yvUx4?autoplay=1&mute=1&controls=0&loop=1&playlist=qT9Ug3yvUx4" title="Project 2 Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <div class = "video" data-src="https://www.youtube.com/embed/qT9Ug3yvUx4?autoplay=1&mute=1&controls=0&loop=1&playlist=qT9Ug3yvUx4">
+            <img src="https://img.youtube.com/vi/qT9Ug3yvUx4/hqdefault.jpg" alt="Game Jam">
         </div>
       </section>
   
+      <section class="project-showcase">
+        <div class="text">
+          <h2>Unity Shaders</h2>
+          <p>I created 4 shaders for my shaders module. We were taught different shaders and here is what I made for my assignment:</p>
+            <li>A good idea I had was to combine the cube map and the mirror shader I learned a tweak them a little. 
+            I added a code that detected if the player was near enough so you could see a different cube map such as if you were looking through a window and I had the "Mirror" there to just reflect the player position in the texture.</li>
+            <li>I made a wave shader that moved along a wave frequency with an animated texture on top to simulate the ocean. </li>
+            <li>I created a rusting texture that would change the roughness and glossiness of a texture over time.</li>
+            <li>Lastly I created a dissolving texture that took a bump map and dissolved the model according to the difference.</li>
+        </div>
+        <div class="gallery">
+          <div class="other-images">
+            <img src="Assets/images/Reflection.png" alt="Reflection">
+          </div>
+          <div class="other-images">
+            <img src="Assets/images/interior.png" alt="Interior">
+          </div>
+          <div class="other-images">
+            <img src="Assets/images/wave.png" alt="wave">
+          </div>
+          <div class="gallery-item">
+            <img src="Assets/images/rusting.png" alt="Rusting">
+          </div>
+          <div class="gallery-item">
+            <img src="Assets/images/dissolve.png" alt="Dissolve">
+          </div>
+        </div>
+      </section>
+      
+      <section class="project-showcase">
+        <div class="text">
+          <h2>OpenGL</h2>
+          <p>My task when working with OpenGL was to create a walking dog. 
+            Which meant that I had to create the entire dog from code and have it walk and physically move as well. 
+            I had to animate the limbs of the dog to move when the dog was moving. In addition to this, I had to add texture mapping to the dog and also add lighting to the scene.</p>
+        </div>
+        <div class="gallery">
+          <div class="other-images">
+            <img src="Assets/images/dog1.png" alt="Dog1">
+          </div>
+          <div class="other-images">
+            <img src="Assets/images/dog2.png" alt="Dog2">
+          </div>
+          <div class="other-images">
+            <img src="Assets/images/dog3.png" alt="Dog4">
+          </div>
+        </div>
+      </section>
 
 
   </div>
@@ -402,6 +484,32 @@
   <footer>
     <p>&copy; 2024 Lewis Andrew Broad. All rights reserved.</p>
   </footer>
+
+  <script>
+    // Intersection Observer to lazy load and play videos
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const videoWrapper = entry.target;
+          const iframe = document.createElement('iframe');
+          iframe.src = videoWrapper.getAttribute('data-src');
+          iframe.frameborder = '0';
+          iframe.allow = 'autoplay; encrypted-media; picture-in-picture';
+          iframe.allowfullscreen = true;
+          videoWrapper.innerHTML = ''; // Clear the placeholder
+          videoWrapper.appendChild(iframe);
+          observer.unobserve(videoWrapper); // Stop observing once the video is loaded
+        }
+      });
+    }, {
+      threshold: 0.5 // Load video when 50% of the iframe is visible
+    });
+
+    // Observe each video wrapper element
+    document.querySelectorAll('.video').forEach(video => {
+      observer.observe(video);
+    });
+  </script>
 
 </body>
 </html>
