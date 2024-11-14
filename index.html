@@ -179,6 +179,39 @@
       height: 315px;
     }
 
+    /* Project Showcase Section */
+    .project-showcase {
+      display: flex;
+      flex-wrap: wrap;
+      gap:50px;
+      margin-top: 40px;
+    }
+
+    .project-showcase .text {
+      flex: 1;
+      min-width: 300px;
+      margin-right: 20px;
+    }
+
+    .project-showcase .video-wrapper {
+      flex: 1;
+      min-width: 300px;
+      position:relative;
+      padding-bottom: 30.25%;
+      height:0;
+      overflow:hidden;
+    }
+
+    .project-showcase iframe {
+      position: absolute;
+      top:0;
+      left:0;
+      width: 100%;
+
+      height: 100%;
+      border: none;
+    }
+
     /* Footer Section */
     footer {
       background-color: #333;
@@ -198,7 +231,7 @@
     <h1>Lewis Andrew Broad<br></h1>
     <h3>(BSc) Computer Games Development</h3>
     <iframe class="header-video" 
-      src="https://www.youtube.com/embed/WHjdcN3fpZ4?autoplay=1&mute=1&controls=0&loop=1" 
+      src="https://www.youtube.com/embed/WHjdcN3fpZ4?autoplay=1&mute=1&controls=0&loop=1&playlist=WHjdcN3fpZ4" 
       frameborder="0" 
       allow="autoplay; encrypted-media; picture-in-picture" 
       allowfullscreen>
@@ -284,12 +317,85 @@
     </section>
 
     <!-- Video Section -->
-    <section class="video-section">
+     <!-- <section class="video-section">
       <h2>My Videos</h2>
       <div class="video">
-        <iframe src="https://www.youtube.com/embed/WHjdcN3fpZ4?autoplay=1" title="Video 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/WHjdcN3fpZ4?autoplay=1&mute=1&controls=0&loop=1" title="Video 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
-    </section>
+    </section> 
+
+    -->
+
+      <!-- Project Showcase Section -->
+      <section class="project-showcase">
+        <div class="text">
+          <h2>Project 1: Funky Ride</h2>
+          <p>TMy first project was made in unity. 
+            It was a racing game. We were graded on the overall level design and not just the coding elements of the level. 
+            We were encouraged to use the asset store using assets that fit our overall theme.  I created a race track in the country with a lake, forest and mountains. 
+            I enjoyed decorating the map with models such as the hot air balloons, fan stands, emergency vehicles and a penguin.
+
+          </p>
+        </div>
+        <div class="video-wrapper">
+          <iframe src="https://www.youtube.com/embed/Pp1vs8c64cY?autoplay=1&mute=1&controls=0&loop=1&playlist=Pp1vs8c64cY" title="Project 1 Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+      </section>
+  
+      <!-- Repeat the Project Showcase Section for more projects -->
+      <section class="project-showcase">
+        <div class="text">
+          <h2>Project 2: Baldy vs Zombie2</h2>
+          <p>I made a 2D zombie shooter game in which we were graded mainly on the coding. 
+            The game uses pooling for the spawning of enemies and bullets.  
+            The game is timed and ends on the characters health hitting 0 or the time. The aim is to eliminate as many zombies as possible in the given time. 
+            An issue I had with the game was that the projectiles fired from the player would collide with the player and so sometimes would seemingly not fire. 
+            To fix this, I had a separate entity for the gun that follows the player and fires from that.</p>
+        </div>
+        <div class="video-wrapper">
+          <iframe src="https://www.youtube.com/embed/H8u_22RNVto?autoplay=1&mute=1&controls=0&loop=1&playlist=H8u_22RNVto" title="Project 2 Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+      </section>
+      <section class="project-showcase">
+        <div class="text">
+          <h2>Unreal Engine: Fight Lab</h2>
+          <p>In my first project in unreal engine, me and some others in my class created a melee combat game. 
+            I was in charge of the code of the game, the levels and the gameplay. 
+            I created the AI which used the same animation and fighting mechanics as the player and had the instructions to walk towards the player and attack when close. 
+            The aim is to defeat all the enemies and that will allow the player to proceed through a portal.</p>
+        </div>
+        <div class="video-wrapper">
+          <iframe src="https://www.youtube.com/embed/tJhYNbTKX9s?autoplay=1&mute=1&controls=0&loop=1&playlist=tJhYNbTKX9s" title="Project 2 Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+      </section>
+      <section class="project-showcase">
+        <div class="text">
+          <h2>Game Jam</h2>
+          <p>During my studies, I participated in a game jam along with other students. The theme was "make me laugh". 
+            I, along with another student handled the coding in our game whereas another two created the sound and the sprites. 
+            My main part was the boss fight. The player will be locked into the boss fight where the boss will shoot normal bullets at the player. 
+            Upon hitting half health, the boss' speed will double and they will shoot homing missiles at the player.</p>
+        </div>
+        <div class="video-wrapper">
+          <iframe src="https://www.youtube.com/embed/Z0flcjagu8Y?autoplay=1&mute=1&controls=0&loop=1&playlist=Z0flcjagu8Y" title="Project 2 Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+      </section>
+      <section class="project-showcase">
+        <div class="text">
+          <h2>Animation</h2>
+          <p>In addition to developing games, I have also been learning animation. 
+            I had been tasked with making animations using IK constraints, parent and child linking, and character rigging. 
+            I learned to use Maya in this time to create animations but decided to create my animation in Unreal Engine 5 as I wanted to enhance my skills in this engine. 
+            I used face tracking and manually rigged the movement of the characters in my animation.
+
+          </p>
+        </div>
+        <div class="video-wrapper">
+          <iframe src="https://www.youtube.com/embed/qT9Ug3yvUx4?autoplay=1&mute=1&controls=0&loop=1&playlist=qT9Ug3yvUx4" title="Project 2 Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+      </section>
+  
+
 
   </div>
 
