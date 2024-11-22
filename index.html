@@ -19,6 +19,42 @@
       color: #333;
     }
 
+       /* Modal Styles */
+    /* The modal container */
+    .modal {
+      display: none; /* Hidden by default */
+      position: fixed; /* Fixed position */
+      z-index: 1; /* Sit on top */
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7); /* Black background with transparency */
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    /* The modal content (image) */
+    .modal-content {
+      max-width: 90%;
+      max-height: 80%;
+      margin: auto;
+      display: block;
+      border-radius: 8px;
+    }
+
+    /* Close button */
+    .close {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      color: #fff;
+      font-size: 2em;
+      cursor: pointer;
+    }
+
+
     header {
       background-color: #333;
       color: #fff;
@@ -53,8 +89,9 @@
     
 
     .container {
-      width: 80%;
-      margin: 20px auto;
+      width: 100%;
+      max-width:1400px;
+      margin: 0 auto;
     }
 
     /* Section Header Style */
@@ -118,8 +155,9 @@
     /* Gallery Section */
     .gallery {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
       gap: 20px;
+      width: 100%;
       max-width: 100%;
       margin-top: 40px;
     }
@@ -131,7 +169,7 @@
       height: auto;
       object-fit: contain; /* Prevents stretching */
       border-radius: 8px;
-      /*box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       display: block;
       margin: 0 auto;
     }
@@ -155,6 +193,31 @@
       /*box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
       display: block;
       margin: 0 auto;
+    }
+    .gallery .current-proj{
+      display:flex;
+      flex-wrap:wrap;
+      gap: 20px; /* Adjust the space between images */
+      width: 100%; /* Take up full available width */
+      max-width: 100%; /* Or set a specific value like 1200px */
+      margin-bottom: 40px;
+      justify-content: center;
+    }
+    .gallery .current-proj img{
+      flex:1;
+      flex-basis:500px;
+      max-width: 1000px;
+      width: 100%; /* Allow the image to grow with the container */
+    height: auto; /* Maintain aspect ratio */
+    object-fit:contain; /* Prevent stretching */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: block;
+    margin: 0 auto; /* Center the image */
+
+    }
+    .gallery a img, .video-wrapper img {
+     cursor: pointer;  /* This will make the cursor turn into a clickable hand when hovering over the images */
     }
 
     /* Video Section */
@@ -249,6 +312,11 @@
     footer p {
       font-size: 1em;
     }
+
+
+
+
+
   </style>
 </head>
 <body>
@@ -320,22 +388,26 @@
     I am currently working on a coop puzzle game for my final year project. In this project, I am focusing on developing the game mainly using C++ in Unreal Engine 5. I have created the multiplayer subsystem and I already have replicated actor components for the puzzles. Here are some key features I have planned for the project:
   </p>
   <ul>
-    <li>Unique Character Abilities and Traits: Each player will control one of two characters. I'm planning for the characters to have their own abilities such as being able to break glass and traits such as weight used to help them complete puzzles.</li>
-    <li>Random Generated Puzzles: Another feature I'm implementing is for puzzle answers to be random each time the game is played. This gives the player a slight change each time and means that the puzzles can not be immediately skipped if the player knows the answer.</li>
-    <li>Thematic Environment: The environment I have planned is going to tell a story. While the game can be played without a care for how the environment looks, I'd like players to be able to look around at the scenery and feel like there is a deeper story to be told.</li>
+    <li><b>Unique Character Abilities and Traits:</b> Each player will control one of two characters. I'm planning for the characters to have their own abilities such as being able to break glass and traits such as weight used to help them complete puzzles.</li>
+    <li><b>Random Generated Puzzles:</b> Another feature I'm implementing is for puzzle answers to be random each time the game is played. This gives the player a slight change each time and means that the puzzles can not be immediately skipped if the player knows the answer.</li>
+    <li><b>Thematic Environment:</b> The environment I have planned is going to tell a story. While the game can be played without a care for how the environment looks, I'd like players to be able to look around at the scenery and feel like there is a deeper story to be told.</li>
     <!-- Add more features as needed -->
   </ul>
 
   <!-- Project Screenshots -->
   <div class="gallery">
-    <div class="other-images">
+    <div class="current-proj">
+      <a href = "#" class= "clickable-image">
       <img src="ScreenShot00000.png" alt="Screenshot 1">
+    
     </div>
-    <div class="other-images">
+
+    <div class="current-proj">
       <img src="ScreenShot00003.png" alt="Screenshot 2">
     </div>
-    <div class="other-images">
+    <div class="current-proj">
       <img src="ScreenShot00002.png" alt="Screenshot 3">
+    </a>
     </div>
     <!-- Add more screenshots as needed -->
   </div>
@@ -347,7 +419,12 @@
     </div>
   </div>
 
+  <div id="myModal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="img01">
+  </div>
 </section>
+
 
 
     <!-- Gallery Section -->
@@ -514,6 +591,7 @@
             <img src="Assets/images/dog3.png" alt="Dog4">
           </div>
         </div>
+       
       </section>
 
 
@@ -524,6 +602,7 @@
   </footer>
 
   <script>
+    
     // Intersection Observer to lazy load and play videos
     const observer = new IntersectionObserver((entries, observer) => {
       entries.forEach(entry => {
@@ -543,11 +622,49 @@
       threshold: 0.5 // Load video when 50% of the iframe is visible
     });
 
+
+
     // Observe each video wrapper element
     document.querySelectorAll('.video').forEach(video => {
       observer.observe(video);
     });
   </script>
+<script>
+  // Get the modal element
+  var modal = document.getElementById("myModal");
+  var modalImg = document.getElementById("img01");
+
+  // Get all images within the Current Project section
+  var images = document.querySelectorAll('.current-project .gallery img');
+
+  // Loop through each image and add a click event listener
+  images.forEach(function(img) {
+    img.onclick = function() {
+      modal.style.display = "flex";  // Show the modal
+      modalImg.src = this.src;      // Set the clicked image as the source for the modal
+    };
+  });
+
+  // Get the close button element
+  var closeButton = document.getElementsByClassName("close")[0];
+
+  // When the user clicks on the close button, hide the modal
+  closeButton.onclick = function() {
+    modal.style.display = "none";
+  };
+</script>
+<script>
+  // Select all links with the class .clickable-image
+const clickableLinks = document.querySelectorAll('.clickable-image');
+
+// Add event listener to prevent default link navigation
+clickableLinks.forEach(link => {
+  link.addEventListener('click', function(event) {
+    event.preventDefault(); // Prevent the page from navigating
+    console.log('Image clicked!'); // Or add any other custom behavior here
+  });
+});
+</script>
 
 </body>
 </html>
