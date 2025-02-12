@@ -242,6 +242,7 @@
       height: 315px;
     }
 
+
     /* Project Showcase Section */
     .project-showcase {
       display: flex;
@@ -263,6 +264,15 @@
     width: 100%;
     margin-top:20 px;
   }
+  .project-showcase .video-wrapper img {
+  width: 100%; /* Make sure it fits within its container */
+  max-width: 500px; /* Adjust based on available space */
+  height: auto; /* Maintain aspect ratio */
+  object-fit: contain; /* Prevents cropping */
+  border-radius: 8px;
+  display: block;
+  margin: 0 auto; /* Center the image */
+}
 
 /* Gallery Item Styling */
   .project-showcase .gallery-item img {
@@ -525,6 +535,24 @@
         <div class="video-wrapper">
         <div class = "video" data-src="https://www.youtube.com/embed/Z0flcjagu8Y?autoplay=1&mute=1&controls=0&loop=1&playlist=Z0flcjagu8Y">
           <img src="https://img.youtube.com/vi/Z0flcjagu8Y/hqdefault.jpg" alt="Game Jam">
+        </div>
+      </section>
+
+      <section class="project-showcase">
+        <div class="text">
+          <h2>C++ Advanced Programming</h2>
+          <p>I created a C++ test based game for one of my projects. Originally this was a project I started over the summer but figured I can use it as one of my university projects.
+            This game is an adventure game with character classes that set the characters initial stats. For example the Knight class has High armour and HP but lower attack damage, whereas the rogue class is the opposite to this.
+            The game has the player wondering around and has a random encounter chance with there currently being 2 encounters. These being an enemy will spawn from either a tank enemy or a damage enemy (I called them a magic tree and a goblin.) 
+            And a magic gnome that will buff the player or laugh and leave. This project was ultimately a skills test for my knowledge in C++ and I utilised multiple methods such as exception handling, memory management, winsock, and overloading.
+            This project I did get carried away with because I was enjoying adding more content to the game but I had to remove some features as we were limited to a 10 class limit.
+          </p>
+        </div>
+        <div class="video-wrapper">
+        <div class = "image" alt="C++ Project">
+          <a href="https://github.com/LewisBroad/TextBasedGame" target="_blank">
+            <img src="https://github.com/fluidicon.png" alt="C++ Project">
+          </a>
         </div>
       </section>
 
