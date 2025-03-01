@@ -12,6 +12,44 @@
       padding: 0;
       box-sizing: border-box;
     }
+    .navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #333;
+  padding: 10px 0;
+  text-align: center;
+  z-index: 1000;
+}
+
+.navbar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.navbar li {
+  margin: 0 15px;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.2em;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+  color: #f4a261;
+}
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top:60px;
+}
     body {
       font-family: Arial, sans-serif;
       line-height: 1.6;
@@ -47,7 +85,7 @@
     /* Close button */
     .close {
       position: absolute;
-      top: 20px;
+      top: 50px;
       right: 20px;
       color: #fff;
       font-size: 2em;
@@ -282,6 +320,23 @@
   display: block;
   margin: 0 auto; /* Center the image */
 }
+#current-project .video-wrapper {
+  display: flex;
+  gap: 15px; /* Space between videos */
+  justify-content: center; /* Center them on the page */
+  flex-wrap: nowrap; /* Prevents wrapping */
+}
+
+#current-project .video {
+  flex: 1; /* Makes both videos take equal space */
+  max-width: 50%; /* Ensures they don’t exceed half the container width */
+  height: auto; /* Maintains aspect ratio */
+}
+
+#current-project .video img {
+  width: 100%; /* Makes the thumbnail fill its container */
+  height: auto; /* Keeps aspect ratio */
+}
 
 /* Gallery Item Styling */
   .project-showcase .gallery-item img {
@@ -339,7 +394,13 @@
   </style>
 </head>
 <body>
-
+  <nav class="navbar">
+    <ul>
+      <li><a href="#about-me">About Me</a></li>
+      <li><a href="#current-project">Current Project</a></li>
+      <li><a href="#projects">My Projects</a></li>
+    </ul>
+  </nav>
   <header>
     <h1>Lewis Andrew Broad<br></h1>
     <h3>(BSc) Computer Games Development</h3>
@@ -354,7 +415,7 @@
   <div class="container">
 
     <!-- About Me Section (Optional) -->
-    <section class="about-me">
+    <section id="about-me" class="about-me">
       <h2>About Me</h2>
       <p> <ul>
         <li>I am a student studying games development with a passion for gameplay programming. As someone who used to despise coding when I was younger, I found myself surprised when I started enjoying coding and creating my own projects in my spare time. </li>
@@ -416,7 +477,7 @@
 
 
 <!-- Current Project Section -->
-<section class="current-project">
+<section id= "current-project" class="current-project">
   <h2>Current Project: [Untitled Coop Game]</h2>
   <p>
     I am currently working on a coop puzzle game for my final year project. In this project, I am focusing on developing the game mainly using C++ in Unreal Engine 5. I have created the multiplayer subsystem and I already have replicated actor components for the puzzles. Here are some key features I have planned for the project:
@@ -451,6 +512,9 @@
     <div class="video" data-src="https://www.youtube.com/embed/xGlTU7lryGQ?autoplay=1&mute=1&controls=0&loop=1&playlist=xGlTU7lryGQ">
       <img src="https://img.youtube.com/vi/xGlTU7lryGQ/hqdefault.jpg" alt="Coop Game Video">
     </div>
+    <div class="video" data-src="https://www.youtube.com/embed/GpwNO42NDgM?autoplay=1&mute=1&controls=0&loop=1&playlist=GpwNO42NDgM">
+      <img src="https://img.youtube.com/vi/NEW_VIDEO_ID/hqdefault.jpg" alt="Second Coop Game Video">
+    </div>
   </div>
 
   <div id="myModal" class="modal">
@@ -462,7 +526,7 @@
 
 
     <!-- Gallery Section -->
-    <section class="Projects">
+    <section id= "projects" class="Projects">
       <h2>My Projects</h2>
       <div class="gallery">
         <!-- First Image: Fixed size -->
@@ -521,7 +585,7 @@
       <!-- Repeat the Project Showcase Section for more projects -->
       <section class="project-showcase">
         <div class="text">
-          <h2>Project 2: Baldy vs Zombie2</h2>
+          <h2>Project 2: Baldy vs Zombie²</h2>
           <p>I made a 2D zombie shooter game in which we were graded mainly on the coding. 
             The game uses pooling for the spawning of enemies and bullets.  
             The game is timed and ends on the characters health hitting 0 or the time. The aim is to eliminate as many zombies as possible in the given time. 
