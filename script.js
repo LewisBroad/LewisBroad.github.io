@@ -51,7 +51,9 @@ img.onclick = function() {
   openModal(index);
 };
 });
-
+modalImg.onclick = function(event) {
+    event.stopPropagation(); // Prevents the click event from propagating up to the modal
+  };
 // Function to find the next valid image index
 function getNextValidIndex(startIndex, direction) {
 let newIndex = startIndex;
