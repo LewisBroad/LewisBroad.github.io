@@ -12,16 +12,21 @@
       padding: 0;
       box-sizing: border-box;
     }
+    
     .navbar {
   position: fixed;
   top: 0;
   width: 100%;
-  background-color: #333;
+  background-color: rgba(0, 0, 0, 0.623);
   padding: 10px 0;
   text-align: center;
   z-index: 1000;
 }
-
+.navbar a{
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+}
 .navbar ul {
   list-style: none;
   margin: 0;
@@ -178,7 +183,24 @@ html {
     .passion p {
       color: #555;
     }
+    
+    .current-project{
+      color:#fff;
+      background :#282a36;
+      padding:20px;
+      border-radius: 12px;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
 
+    }
+    .current-project h2{
+      color:#fff;
+    }
+    .current-project img {
+  transition: transform 0.3s ease-in-out;
+}
+.current-project img:hover {
+  transform: scale(1.1);
+}
     /* Skills Section */
     .skills {
       background-color: #f0f0f0;
@@ -197,6 +219,8 @@ html {
       color: #333;
       margin-bottom: 10px;
     }
+    .Projects{
+  padding-top:50px;}
 
 
     /* Gallery Section */
@@ -206,7 +230,13 @@ html {
       gap: 20px;
       width: 100%;
       max-width: 100%;
-      margin-top: 40px;
+      margin-top: 10px;
+    }
+    .gallery img {
+  transition: transform 0.3s ease-in-out;
+}
+    .gallery img:hover{
+      transform: scale(1.1);
     }
 
     /* First image: Fixed size */
@@ -289,6 +319,11 @@ html {
       height: 315px;
     }
 
+    .video img {
+  border-radius: 8px;
+  transition: transform 0.3s ease-in-out;
+}
+
 
     /* Project Showcase Section */
     .project-showcase {
@@ -338,6 +373,7 @@ html {
   height: auto; /* Keeps aspect ratio */
 }
 
+
 /* Gallery Item Styling */
   .project-showcase .gallery-item img {
     width: 100%;
@@ -354,7 +390,32 @@ html {
     max-width: 400px; /* Fixed max-width for the first image */
     margin: 0 auto;
   }
+  .prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 3rem; /* Increase size */
+  color: white;
+  cursor: pointer;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  user-select: none;
+}
 
+.prev {
+  left: 5%;
+} 
+
+.next {
+  right: 5%;
+}
+.no-hover:hover {
+  transform: none !important;
+}
+.prev:hover, .next:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
 
     .project-showcase .video-wrapper {
       flex: 1;
@@ -425,7 +486,7 @@ html {
       </p>
     </ul>
       <a href="https://www.linkedin.com/in/LewisBroad" target="_blank" rel="noopener noreferrer">
-        <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" width="30" height="30">
+        <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" class="no-modal" alt="LinkedIn" width="30" height="30">
     </a>
     </section>
 
@@ -457,19 +518,19 @@ html {
       </ul>
       <div class = "gallery">
         <div>
-          <img class = "programs" src="Unreal_Engine_Logo.svg.png" alt = "Unnreal"> 
+          <img class = "programs no-modal" src="Unreal_Engine_Logo.svg.png" alt = "Unnreal"> 
         </div>
         <div>
-          <img class = "programs" src="d4a3b6dcfda56c503686bb671adf9f25.png" alt = "Unity"> 
+          <img class = "programs no-modal" src="d4a3b6dcfda56c503686bb671adf9f25.png" alt = "Unity"> 
         </div>
         <div>
-          <img class = "programs" src="3ds-max-logo-9B624BE04F-seeklogo.com (1).png" alt = "3ds max"> 
+          <img class = "programs no-modal" src="3ds-max-logo-9B624BE04F-seeklogo.com (1).png" alt = "3ds max"> 
         </div>
         <div>
-          <img class = "programs" src="autodesk-maya-logo-F485ED50BF-seeklogo.com (1).png" alt = "Maya"> 
+          <img class = "programs no-modal" src="autodesk-maya-logo-F485ED50BF-seeklogo.com (1).png" alt = "Maya"> 
         </div>
         <div>
-          <img class = "programs" src="512px-Visual_Studio_Icon_2019.svg.png" alt = "Visual Studio"> 
+          <img class = "programs no-modal" src="512px-Visual_Studio_Icon_2019.svg.png" alt = "Visual Studio"> 
         </div>
 
       </div>
@@ -510,16 +571,18 @@ html {
   <!-- Project Video -->
   <div class="video-wrapper">
     <div class="video" data-src="https://www.youtube.com/embed/xGlTU7lryGQ?autoplay=1&mute=1&controls=0&loop=1&playlist=xGlTU7lryGQ">
-      <img src="https://img.youtube.com/vi/xGlTU7lryGQ/hqdefault.jpg" alt="Coop Game Video">
+      <img src="https://img.youtube.com/vi/xGlTU7lryGQ/hqdefault.jpg" class="no-modal" alt="Coop Game Video">
     </div>
     <div class="video" data-src="https://www.youtube.com/embed/GpwNO42NDgM?autoplay=1&mute=1&controls=0&loop=1&playlist=GpwNO42NDgM">
-      <img src="https://img.youtube.com/vi/NEW_VIDEO_ID/hqdefault.jpg" alt="Second Coop Game Video">
+      <img src="https://img.youtube.com/vi/NEW_VIDEO_ID/hqdefault.jpg" class="no-modal" alt="Second Coop Game Video">
     </div>
   </div>
 
   <div id="myModal" class="modal">
     <span class="close">&times;</span>
     <img class="modal-content" id="img01">
+    <span class="prev" id="prev">&lt;</span> <!-- Left Arrow -->
+  <span class="next" id="next">&gt;</span> <!-- Right Arrow -->
   </div>
 </section>
 
@@ -532,25 +595,25 @@ html {
         <!-- First Image: Fixed size -->
         <div>
           <a href="https://landturtle.itch.io/funky-ride" target="_blank">
-            <img class="first-image" src="5UNUpv.png" alt="Project 1 - Funky Ride">
+            <img class="first-image no-modal " src="5UNUpv.png" alt="Project 1 - Funky Ride">
           </a>
         </div>
         
         <!-- Other Images: Adjustable size -->
         <div class="other-images">
           <a href="https://landturtle.itch.io/baldy2" target="_blank">
-            <img src="6mgsEx.jpg" alt="Project 2 - Baldy vs Zombie2">
+            <img src="6mgsEx.jpg" class="no-modal" alt="Project 2 - Baldy vs Zombie2">
           </a>
         </div>
 
         <div class="other-images">
           <a href="https://plainhades.itch.io/basically-naked" target="_blank">
-            <img src="wj+H7L.png" alt="Project 3 - Basically Naked">
+            <img src="wj+H7L.png" class="no-modal" alt="Project 3 - Basically Naked">
           </a>
         </div>
 
         <div class="other-images">
-          <img src="Sequence 01.gif" alt="Project 4 - Fight Lab">
+          <img src="Sequence 01.gif" class="no-modal" alt="Project 4 - Fight Lab">
         </div>
       </div>
     </section>
@@ -574,14 +637,14 @@ html {
             We were encouraged to use the asset store using assets that fit our overall theme.  I created a race track in the country with a lake, forest and mountains. 
             I enjoyed decorating the map with models such as the hot air balloons, fan stands, emergency vehicles and a penguin.</p>
             <a href="https://landturtle.itch.io/funky-ride" target="_blank" rel="noopener noreferrer">
-              <img src="https://static.itch.io/images/logo-black-new.svg" alt="Itch" width="100" height="50">
+              <img src="https://static.itch.io/images/logo-black-new.svg" class="no-modal" alt="Itch" width="100" height="50">
           </a>
 
           </p>
         </div>
         <div class="video-wrapper">
           <div class="video" data-src="https://www.youtube.com/embed/Pp1vs8c64cY?autoplay=1&mute=1&controls=0&loop=1&playlist=Pp1vs8c64cY">
-            <img src="https://img.youtube.com/vi/Pp1vs8c64cY/hqdefault.jpg" alt="Funky Ride Project Video">
+            <img src="https://img.youtube.com/vi/Pp1vs8c64cY/hqdefault.jpg" class="no-modal" alt="Funky Ride Project Video">
           </div>
       </section>
   
@@ -595,12 +658,12 @@ html {
             An issue I had with the game was that the projectiles fired from the player would collide with the player and so sometimes would seemingly not fire. 
             To fix this, I had a separate entity for the gun that follows the player and fires from that.</p>
             <a href="https://landturtle.itch.io/baldy2" target="_blank" rel="noopener noreferrer">
-              <img src="https://static.itch.io/images/logo-black-new.svg" alt="Itch" width="100" height="50">
+              <img src="https://static.itch.io/images/logo-black-new.svg" class="no-modal" alt="Itch" width="100" height="50">
           </a>
        </div>
         <div class="video-wrapper">
           <div class="video" data-src="https://www.youtube.com/embed/H8u_22RNVto?autoplay=1&mute=1&controls=0&loop=1&playlist=H8u_22RNVto">
-            <img src="https://img.youtube.com/vi/H8u_22RNVto/hqdefault.jpg" alt="Baldy vs Zombie2 Project Video">
+            <img src="https://img.youtube.com/vi/H8u_22RNVto/hqdefault.jpg" class="no-modal" alt="Baldy vs Zombie2 Project Video">
           </div>
       </section>
 
@@ -614,7 +677,7 @@ html {
         </div>
         <div class="video-wrapper">
           <div class="video" data-src="https://www.youtube.com/embed/tJhYNbTKX9s?autoplay=1&mute=1&controls=0&loop=1&playlist=tJhYNbTKX9s">
-            <img src="https://img.youtube.com/vi/tJhYNbTKX9s/hqdefault.jpg" alt="Fight Lab Video">
+            <img src="https://img.youtube.com/vi/tJhYNbTKX9s/hqdefault.jpg" class="no-modal" alt="Fight Lab Video">
         </div>
 
       </section>
@@ -626,12 +689,12 @@ html {
             My main part was the boss fight. The player will be locked into the boss fight where the boss will shoot normal bullets at the player. 
             Upon hitting half health, the boss' speed will double and they will shoot homing missiles at the player.</p>
           <a href="https://plainhades.itch.io/basically-naked" target="_blank" rel="noopener noreferrer">
-            <img src="https://static.itch.io/images/logo-black-new.svg" alt="Itch" width="100" height="50">
+            <img src="https://static.itch.io/images/logo-black-new.svg" class="no-modal" alt="Itch" width="100" height="50">
         </a>
         </div>
         <div class="video-wrapper">
         <div class = "video" data-src="https://www.youtube.com/embed/Z0flcjagu8Y?autoplay=1&mute=1&controls=0&loop=1&playlist=Z0flcjagu8Y">
-          <img src="https://img.youtube.com/vi/Z0flcjagu8Y/hqdefault.jpg" alt="Game Jam">
+          <img src="https://img.youtube.com/vi/Z0flcjagu8Y/hqdefault.jpg" class="no-modal" alt="Game Jam">
         </div>
       </section>
 
@@ -647,7 +710,7 @@ html {
         <div class="video-wrapper">
         <div class = "image" alt="C++ Project">
           <a href="https://github.com/LewisBroad/TextBasedGame" target="_blank">
-            <img src="https://github.com/fluidicon.png" alt="C++ Project">
+            <img src="https://github.com/fluidicon.png" class="no-modal" alt="C++ Project">
           </a>
         </div>
       </section>
@@ -664,7 +727,7 @@ html {
         </div>
         <div class="video-wrapper">
           <div class = "video" data-src="https://www.youtube.com/embed/qT9Ug3yvUx4?autoplay=1&mute=1&controls=0&loop=1&playlist=qT9Ug3yvUx4">
-            <img src="https://img.youtube.com/vi/qT9Ug3yvUx4/hqdefault.jpg" alt="Game Jam">
+            <img src="https://img.youtube.com/vi/qT9Ug3yvUx4/hqdefault.jpg" class="no-modal" alt="Game Jam">
         </div>
       </section>
   
@@ -678,7 +741,7 @@ html {
             <li>I created a rusting texture that would change the roughness and glossiness of a texture over time.</li>
             <li>Lastly I created a dissolving texture that took a bump map and dissolved the model according to the difference.</li>
             <a href="https://github.com/LewisBroad/Unity-Shaders" target="_blank" rel="noopener noreferrer">
-              <img src="https://github.com/fluidicon.png" alt="Github" width="50" height="50">
+              <img src="https://github.com/fluidicon.png" class="no-modal" alt="Github" width="50" height="50">
             </a>
         </div>
         <div class="gallery">
@@ -707,7 +770,7 @@ html {
             Which meant that I had to create the entire dog from code and have it walk and physically move as well. 
             I had to animate the limbs of the dog to move when the dog was moving. In addition to this, I had to add texture mapping to the dog and also add lighting to the scene.</p>
             <a href="https://github.com/LewisBroad/Graphical-Programming" target="_blank" rel="noopener noreferrer">
-              <img src="https://github.com/fluidicon.png" alt="Github" width="50" height="50">
+              <img src="https://github.com/fluidicon.png" class="no-modal" alt="Github" width="50" height="50">
             </a>
         </div>
         <div class="gallery">
@@ -721,7 +784,7 @@ html {
             <img src="Assets/images/dog3.png" alt="Dog4">
           </div>
         </div>
-       
+
       </section>
 
 
@@ -760,29 +823,84 @@ html {
     });
   </script>
 <script>
-  // Get the modal element
+  // Get modal elements
   var modal = document.getElementById("myModal");
   var modalImg = document.getElementById("img01");
+  var closeButton = document.getElementsByClassName("close")[0];
+  var prevButton = document.getElementById("prev");
+  var nextButton = document.getElementById("next");
+  
+  // Get all images except those with class "no-modal" or videos
+  var images = document.querySelectorAll('img:not(.no-modal):not([data-is-video])');
+  var imageArray = Array.from(images); // Convert NodeList to Array
+  var currentIndex = 0;
 
-  // Get all images within the Current Project section
-  var images = document.querySelectorAll('.current-project .gallery img');
+  // Function to open modal with selected image
+  function openModal(index) {
+    currentIndex = index;
+    modal.style.display = "flex";
+    modalImg.src = imageArray[currentIndex].src;
 
-  // Loop through each image and add a click event listener
-  images.forEach(function(img) {
+    imageArray[currentIndex].classList.add("no-hover");
+  }
+
+  // Loop through images and add click event listener
+  images.forEach((img, index) => {
     img.onclick = function() {
-      modal.style.display = "flex";  // Show the modal
-      modalImg.src = this.src;      // Set the clicked image as the source for the modal
+      openModal(index);
     };
   });
 
-  // Get the close button element
-  var closeButton = document.getElementsByClassName("close")[0];
+  // Function to find the next valid image index
+  function getNextValidIndex(startIndex, direction) {
+    let newIndex = startIndex;
+    do {
+      newIndex = (newIndex + direction + imageArray.length) % imageArray.length;
+    } while (imageArray[newIndex].classList.contains("no-modal") || imageArray[newIndex].dataset.isVideo);
+    return newIndex;
+  }
 
-  // When the user clicks on the close button, hide the modal
+  // Function to show previous image
+  function showPrevImage() {
+    currentIndex = getNextValidIndex(currentIndex, -1);
+    openModal(currentIndex);
+  }
+
+  // Function to show next image
+  function showNextImage() {
+    currentIndex = getNextValidIndex(currentIndex, 1);
+    openModal(currentIndex);
+  }
+
+  // Add click event listeners for navigation
+  prevButton.onclick = showPrevImage;
+  nextButton.onclick = showNextImage;
+
+  // Keyboard navigation support
+  document.addEventListener("keydown", function(event) {
+    if (modal.style.display === "flex") {
+      if (event.key === "ArrowLeft") showPrevImage();
+      if (event.key === "ArrowRight") showNextImage();
+      if (event.key === "Escape") modal.style.display = "none";
+    }
+  });
+
+  // Close modal when clicking the close button
   closeButton.onclick = function() {
     modal.style.display = "none";
+    imageArray[currentIndex].classList.remove("no-hover");
+  };
+
+  // Close modal when clicking outside the image
+  modal.onclick = function(event) {
+    if (event.target === modal) {
+      modal.style.display = "none";
+      imageArray[currentIndex].classList.remove("no-hover");
+    }
   };
 </script>
+
+
 <script>
   // Select all links with the class .clickable-image
 const clickableLinks = document.querySelectorAll('.clickable-image');
