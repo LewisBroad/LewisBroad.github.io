@@ -1,0 +1,441 @@
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    .navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.623);
+  padding: 10px 0;
+  text-align: center;
+  z-index: 1000;
+}
+.navbar a{
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+}
+.navbar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.navbar li {
+  margin: 0 15px;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.2em;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+  color: #f4a261;
+}
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top:60px;
+}
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+
+       /* Modal Styles */
+    /* The modal container */
+    .modal {
+      display: none; /* Hidden by default */
+      position: fixed; /* Fixed position */
+      z-index: 1; /* Sit on top */
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7); /* Black background with transparency */
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    /* The modal content (image) */
+    .modal-content {
+      max-width: 90%;
+      max-height: 80%;
+      margin: auto;
+      display: block;
+      border-radius: 8px;
+    }
+
+    /* Close button */
+    .close {
+      position: absolute;
+      top: 50px;
+      right: 20px;
+      color: #fff;
+      font-size: 2em;
+      cursor: pointer;
+    }
+
+
+    header {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      position: relative;
+      padding-top: 60px;
+      padding-bottom: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center; /* Centers content horizontally */
+      align-items: center; /* Centers content vertically */
+      min-height: 500px; /* Ensure the header has a sufficient height */
+    }
+
+    header h1 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+    }
+    header h3{
+      font-size:1.5em;
+      margin-bottom:20px;
+    }
+
+    /* YouTube Video in the header */
+    .header-video {
+      width: 100%;
+      max-width: 1000px; /* Adjusts the max width of the video */
+      height: auto;
+      aspect-ratio: 16/9; /* Maintains the 16:9 aspect ratio */
+      border: none;
+    }
+    
+
+    .container {
+      width: 100%;
+      max-width:1400px;
+      margin: 0 auto;
+    }
+
+    /* Section Header Style */
+    section h2 {
+      font-size: 2em;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    section p {
+      font-size: 1.1em;
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+
+
+    /* About Me Section */
+    .about-me {
+      background-color: #e4e4e4;
+      padding: 20px 20px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      margin-top:20px;
+    }
+
+    .about-me p {
+      color: #555;
+    }
+    .My-Studies{
+      background-color: #f0f0f0;
+      padding: 20px 20px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+    .My-Studies p{
+      color:#555;
+    }
+    /* Passion Section */
+    .passion {
+      background-color: #e4e4e4;
+      padding: 20px 20px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+
+    .passion p {
+      color: #555;
+    }
+    
+    .current-project{
+      color:#fff;
+      background :#282a36;
+      padding:20px;
+      border-radius: 12px;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+
+    }
+    .current-project h2{
+      color:#fff;
+    }
+    .current-project img {
+  transition: transform 0.3s ease-in-out;
+}
+.current-project img:hover {
+  transform: scale(1.1);
+}
+    /* Skills Section */
+    .skills {
+      background-color: #f0f0f0;
+      padding: 40px 20px;
+      border-radius: 8px;
+      margin-bottom: 40px;
+    }
+
+    .skills ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .skills li {
+      font-size: 1.2em;
+      color: #333;
+      margin-bottom: 10px;
+    }
+    .Projects{
+  padding-top:50px;}
+
+
+    /* Gallery Section */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 20px;
+      width: 100%;
+      max-width: 100%;
+      margin-top: 10px;
+    }
+    .gallery img {
+  transition: transform 0.3s ease-in-out;
+}
+    .gallery img:hover{
+      transform: scale(1.1);
+    }
+
+    /* First image: Fixed size */
+    .gallery .first-image {
+      width: 100%;
+      max-width: 400px; /* Fixed width for the first image */
+      height: auto;
+      object-fit: contain; /* Prevents stretching */
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      display: block;
+      margin: 0 auto;
+    }
+
+    /* Other images: Adjustable size */
+    .gallery .other-images img {
+      width: 100%;
+      height: auto;
+      object-fit: contain; /* Prevents stretching */
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      display: block;
+      margin: 0 auto;
+    }
+    .gallery .programs {
+      width: 100%;
+      max-width: 200px; /* Fixed width for the first image */
+      height: auto;
+      object-fit: contain; /* Prevents stretching */
+      border-radius: 8px;
+      /*box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+      display: block;
+      margin: 0 auto;
+    }
+    .gallery .current-proj{
+      display:flex;
+      flex-wrap:wrap;
+      gap: 20px; /* Adjust the space between images */
+      width: 100%; /* Take up full available width */
+      max-width: 100%; /* Or set a specific value like 1200px */
+      margin-bottom: 40px;
+      justify-content: center;
+    }
+    .gallery .current-proj img{
+      flex:1;
+      flex-basis:500px;
+      max-width: 1000px;
+      width: 100%; /* Allow the image to grow with the container */
+    height: auto; /* Maintain aspect ratio */
+    object-fit:contain; /* Prevent stretching */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: block;
+    margin: 0 auto; /* Center the image */
+
+    }
+    .gallery a img, .video-wrapper img {
+     cursor: pointer;  /* This will make the cursor turn into a clickable hand when hovering over the images */
+    }
+
+    /* Video Section */
+    .video-section {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      margin-top: 40px;
+    }
+
+    .video {
+      width: 100%;
+      max-width: 600px;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .video iframe {
+      width: 100%;
+      height: 315px;
+    }
+
+    .video img {
+  border-radius: 8px;
+  transition: transform 0.3s ease-in-out;
+}
+
+
+    /* Project Showcase Section */
+    .project-showcase {
+      display: flex;
+      flex-wrap: wrap;
+      gap:50px;
+      margin-top: 40px;
+    }
+
+    .project-showcase .text {
+      flex: 1;
+      min-width: 300px;
+      margin-right: 20px;
+    }
+    /* Gallery Layout: Responsive Grid */
+  .project-showcase .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Makes the grid responsive */
+    gap: 20px;
+    width: 100%;
+    margin-top:20 px;
+  }
+  .project-showcase .video-wrapper img {
+  width: 100%; /* Make sure it fits within its container */
+  max-width: 500px; /* Adjust based on available space */
+  height: auto; /* Maintain aspect ratio */
+  object-fit: contain; /* Prevents cropping */
+  border-radius: 8px;
+  display: block;
+  margin: 0 auto; /* Center the image */
+}
+#current-project .video-wrapper {
+  display: flex;
+  gap: 15px; /* Space between videos */
+  justify-content: center; /* Center them on the page */
+  flex-wrap: nowrap; /* Prevents wrapping */
+}
+
+#current-project .video {
+  flex: 1; /* Makes both videos take equal space */
+  max-width: 50%; /* Ensures they don’t exceed half the container width */
+  height: auto; /* Maintains aspect ratio */
+}
+
+#current-project .video img {
+  width: 100%; /* Makes the thumbnail fill its container */
+  height: auto; /* Keeps aspect ratio */
+}
+
+
+/* Gallery Item Styling */
+  .project-showcase .gallery-item img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: block;
+    margin: 0 auto;
+  }
+
+/* For images that might be too wide (first image in showcase) */
+  .project-showcase .first-image {
+    max-width: 400px; /* Fixed max-width for the first image */
+    margin: 0 auto;
+  }
+  .prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 3rem; /* Increase size */
+  color: white;
+  cursor: pointer;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  user-select: none;
+}
+
+.prev {
+  left: 5%;
+} 
+
+.next {
+  right: 5%;
+}
+.no-hover:hover {
+  transform: none !important;
+}
+.prev:hover, .next:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+    .project-showcase .video-wrapper {
+      flex: 1;
+      min-width: 300px;
+      position:relative;
+      padding-bottom: 30.25%;
+      height:0;
+      overflow:hidden;
+    }
+
+    .project-showcase iframe {
+      position: absolute;
+      top:0;
+      left:0;
+      width: 100%;
+
+      height: 100%;
+      border: none;
+    }
+
+    /* Footer Section */
+    footer {
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    footer p {
+      font-size: 1em;
+    }
