@@ -145,21 +145,28 @@ html {
 
     /* About Me Section */
     .about-me {
+      
       background-color: #e4e4e4;
-      padding: 20px 20px;
+      padding: 20px 100px;
       border-radius: 8px;
       margin-bottom: 20px;
       margin-top:20px;
     }
-
+    .about-me h2{
+      text-align: center;
+}
     .about-me p {
       color: #555;
+ 
     }
     .My-Studies{
       background-color: #f0f0f0;
-      padding: 20px 20px;
+      padding: 20px 100px;
       border-radius: 8px;
       margin-bottom: 20px;
+    }
+    .My-Studies h2{
+      text-align: center;
     }
     .My-Studies p{
       color:#555;
@@ -167,11 +174,13 @@ html {
     /* Passion Section */
     .passion {
       background-color: #e4e4e4;
-      padding: 20px 20px;
+      padding: 20px 100px;
       border-radius: 8px;
       margin-bottom: 20px;
     }
-
+    .passion h2{
+      text-align: center;
+    }
     .passion p {
       color: #555;
     }
@@ -186,19 +195,36 @@ html {
     }
     .current-project h2{
       color:#fff;
+      text-align: center;
     }
-    .current-project img {
-  transition: transform 0.3s ease-in-out;
-}
-.current-project img:hover {
-  transform: scale(1.1);
-}
     /* Skills Section */
     .skills {
       background-color: #f0f0f0;
-      padding: 40px 20px;
+      padding: 40px 100px;
       border-radius: 8px;
       margin-bottom: 40px;
+    }
+    .skills h2{
+      text-align: center;
+    }
+    .skills-table-wrapper{
+      overflow-x: auto;
+      margin-top:20px;
+    }
+    .skills-table{
+      width:100%;
+      max-width: 900px;
+      margin: 0 auto;
+      border-collapse: collapse;
+      font-size: 1.2em;
+      text-align: left;
+      box-shadow:0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      overflow:hidden;
+    }
+    .skills-table td, .skills-table th{
+      border:1px solid #ddd;
+      padding: 12px;
     }
 
     .skills ul {
@@ -214,7 +240,9 @@ html {
     .Projects{
       padding: 20px 20px;
   padding-top:50px;}
-
+    .Projects h2{
+      text-align: center;
+    }
 
     /* Gallery Section */
     .gallery {
@@ -269,7 +297,7 @@ html {
       flex-wrap:wrap;
       gap: 20px; /* Adjust the space between images */
       width: 100%; /* Take up full available width */
-      max-width: 100%; /* Or set a specific value like 1200px */
+      max-width: 100%; 
       margin-bottom: 40px;
       justify-content: center;
     }
@@ -279,11 +307,11 @@ html {
       max-width: 1000px;
       width: 100%; /* Allow the image to grow with the container */
     height: auto; /* Maintain aspect ratio */
-    object-fit:contain; /* Prevent stretching */
+    object-fit:contain; 
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     display: block;
-    margin: 0 auto; /* Center the image */
+    margin: 0 auto; 
 
     }
     .gallery a img, .video-wrapper img {
