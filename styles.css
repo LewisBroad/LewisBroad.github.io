@@ -293,28 +293,94 @@ html {
       display: block;
       margin: 0 auto;
     }
-    .gallery .current-proj{
-      display:flex;
-      flex-wrap:wrap;
-      gap: 20px; /* Adjust the space between images */
-      width: 100%; /* Take up full available width */
-      max-width: 100%; 
-      margin-bottom: 40px;
+    .current-proj {
+      display: flex;
+      flex-wrap: wrap;
       justify-content: center;
+      gap: 20px;
     }
-    .gallery .current-proj img{
-      flex:1;
-      flex-basis:500px;
-      max-width: 1000px;
-      width: 100%; /* Allow the image to grow with the container */
-    height: auto; /* Maintain aspect ratio */
-    object-fit:contain; 
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    display: block;
-    margin: 0 auto; 
+    
+    .current-proj a {
+      flex: 1 1 300px; /* responsive */
+      max-width: 400px;
+    }
+    
+    .current-proj img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      display: block;
+    }
+    .carousel-wrapper {
+      position: relative;
+      width: 100%;
+      max-width: 1500px; /* wider container */
+      margin: 40px auto;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+    }
+    
+    .carousel-track {
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      scrollbar-width: none; /* Firefox */
+    }
+    
+    .carousel-track::-webkit-scrollbar {
+      display: none; /* Chrome, Safari */
+    }
+    
+    .carousel-track img {
+      width: 500px; /* Adjust this to make them bigger */
+      padding-right: 10px;
+      height: auto;
+      flex-shrink: 0;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+      width: clamp(300px, 40vw, 600px);
+    }
+    
+    .carousel-track img:hover {
+      transform: scale(1.05);
+    }
+    
+    .carousel-btn {
+      background-color: rgba(0,0,0,0.6);
+      border: none;
+      color: white;
+      font-size: 2rem;
+      cursor: pointer;
+      padding: 10px;
+      z-index: 5;
+      border-radius: 50%;
+      transition: background-color 0.3s ease;
+    }
+    
+    .carousel-btn:hover {
+      background-color: rgba(0,0,0,0.9);
+    }
+    
+    .carousel-btn.left {
+      position: absolute;
+      left: 10px;
+    }
+    
+    .carousel-btn.right {
+      position: absolute;
+      right: -10px;
+    }
+    
+    body.modal-open .carousel-btn {
+      display: none !important;
+    }
 
-    }
+    
     .gallery a img, .video-wrapper img {
      cursor: pointer;  /* This will make the cursor turn into a clickable hand when hovering over the images */
     }
