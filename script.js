@@ -43,6 +43,7 @@ modal.style.display = "flex";
 modalImg.src = imageArray[currentIndex].src;
 
 imageArray[currentIndex].classList.add("no-hover");
+document.body.classList.add("modal-open"); // ✅ add this
 }
 
 // Loop through images and add click event listener
@@ -84,7 +85,7 @@ document.addEventListener("keydown", function(event) {
 if (modal.style.display === "flex") {
   if (event.key === "ArrowLeft") showPrevImage();
   if (event.key === "ArrowRight") showNextImage();
-  if (event.key === "Escape") modal.style.display = "none";
+  if (event.key === "Escape") {modal.style.display = "none";document.body.classList.remove("modal-open");} // ✅ remove this
 }
 });
 
@@ -92,6 +93,7 @@ if (modal.style.display === "flex") {
 closeButton.onclick = function() {
 modal.style.display = "none";
 imageArray[currentIndex].classList.remove("no-hover");
+document.body.classList.remove("modal-open"); // ✅ remove this
 };
 
 // Close modal when clicking outside the image
@@ -99,6 +101,7 @@ modal.onclick = function(event) {
 if (event.target === modal) {
   modal.style.display = "none";
   imageArray[currentIndex].classList.remove("no-hover");
+  document.body.classList.remove("modal-open"); // ✅ remove this
 }
 };
 
@@ -114,3 +117,45 @@ event.preventDefault(); // Prevent the page from navigating
 console.log('Image clicked!'); // Or add any other custom behavior here
 });
 });
+
+const carousel = document.querySelector('.carousel-track');
+const leftBtn = document.querySelector('.carousel-btn.left');
+const rightBtn = document.querySelector('.carousel-btn.right');
+
+
+let scrollInterval;
+
+leftBtn.addEventListener('click', () => {
+  carousel.scrollBy({ left: -320, behavior: 'smooth' });
+});
+
+rightBtn.addEventListener('click', () => {
+  carousel.scrollBy({ left: 320, behavior: 'smooth' });
+});
+function startScrolling(direction) {
+  stopScrolling(); // clear any previous intervals
+  scrollInterval = setInterval(() => {
+    carousel.scrollLeft += direction * 10; // Adjust speed here
+  }, 16); // ~60fps
+}
+
+function stopScrolling() {
+  clearInterval(scrollInterval);
+}
+
+// Event listeners
+leftBtn.addEventListener('mousedown', () => startScrolling(-1));
+rightBtn.addEventListener('mousedown', () => startScrolling(1));
+
+document.addEventListener('mouseup', stopScrolling);
+document.addEventListener('mouseleave', stopScrolling);
+//carousel.addEventListener('scroll', () => {
+ // if (carousel.scrollLeft + carousel.offsetWidth >= carousel.scrollWidth - 1) {
+    // Reached end – go back to start
+   // carousel.scrollLeft = 0;
+ // }
+  //if (carousel.scrollLeft === 0) {
+    // Optional: scroll to end (for reverse loop)
+    // scrollContainer.scrollLeft = scrollContainer.scrollWidth;
+  //}
+//});
