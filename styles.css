@@ -188,13 +188,25 @@ html {
     
     .current-project{
       color:#fff;
-      background :#282a36;
+      background :#5e6279;
       padding:20px;
       border-radius: 12px;
       box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
 
     }
     .current-project h2{
+      color:#fff;
+      text-align: center;
+    }
+     .dissertation-project{
+      color:#fff;
+      background :#393a3d;
+      padding:20px;
+      border-radius: 12px;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+
+    }
+    .dissertation-project h2{
       color:#fff;
       text-align: center;
     }
@@ -445,19 +457,45 @@ html {
   margin: 0 auto; /* Center the image */
 }
 #current-project .video-wrapper {
+  display:flex;
+  gap: 15px; /* Space between videos */
+  justify-content: center; /* Center them on the page */
+  flex-wrap: nowrap; /* Prevents wrapping */
+  padding-top: 50px;
+
+}
+
+#current-project .video {
+   aspect-ratio: 16 / 9;
+   width: 88%;
+  max-width: 100%; /* Ensures they don’t exceed half the container width */
+  height: auto; /* Maintains aspect ratio */
+}
+
+#current-project .video img {
+  width: 100%; /* Makes the thumbnail fill its container */
+  height: auto; /* Keeps aspect ratio */
+}
+#current-project .video iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+#dissertation-project .video-wrapper {
   display: flex;
   gap: 15px; /* Space between videos */
   justify-content: center; /* Center them on the page */
   flex-wrap: nowrap; /* Prevents wrapping */
 }
 
-#current-project .video {
+#dissertation-project .video {
   flex: 1; /* Makes both videos take equal space */
   max-width: 50%; /* Ensures they don’t exceed half the container width */
   height: auto; /* Maintains aspect ratio */
 }
 
-#current-project .video img {
+#dissertation-project .video img {
   width: 100%; /* Makes the thumbnail fill its container */
   height: auto; /* Keeps aspect ratio */
 }
