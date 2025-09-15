@@ -159,3 +159,18 @@ document.addEventListener('mouseleave', stopScrolling);
     // scrollContainer.scrollLeft = scrollContainer.scrollWidth;
   //}
 //});
+document.querySelectorAll(".tab-btn").forEach(button => {
+  button.addEventListener("click", () => {
+    const tab = button.dataset.tab;
+
+    // Remove active class from all buttons
+    document.querySelectorAll(".tab-btn").forEach(btn => btn.classList.remove("active"));
+    button.classList.add("active");
+
+    // Hide all tab panels
+    document.querySelectorAll(".tab-panel").forEach(panel => panel.style.display = "none");
+
+    // Show selected panel
+    document.getElementById(tab).style.display = "block";
+  });
+});

@@ -574,3 +574,31 @@ html {
     footer p {
       font-size: 1em;
     }
+    .tab-buttons {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.tab-btn {
+  background: #333;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-family: inherit;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.tab-btn:hover {
+  background: #555;
+}
+
+.tab-btn.active {
+  background: #007bff;
+}
+
+.tab-panel {
+  display: block;
+}
