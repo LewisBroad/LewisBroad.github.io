@@ -574,31 +574,57 @@ html {
     footer p {
       font-size: 1em;
     }
-    .tab-buttons {
+
+
+.tab-buttons {
   display: flex;
-  gap: 10px;
-  margin-bottom: 20px;
+  justify-content: center; /* Centers buttons horizontally */
+  gap: 30px; /* Adds more space between buttons */
+  margin: 30px 0;
 }
+
 
 .tab-btn {
   background: #333;
   color: white;
   border: none;
-  padding: 10px 20px;
+  padding: 15px 40px; /* Larger button size */
+  font-size: 1.2rem; /* Bigger text */
   cursor: pointer;
   font-family: inherit;
-  border-radius: 5px;
-  transition: background 0.3s;
+  border-radius: 12px; /* Softer, rounded buttons */
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
 }
 
 .tab-btn:hover {
   background: #555;
+  transform: translateY(-2px); /* Slight "lift" on hover */
 }
 
 .tab-btn.active {
   background: #007bff;
+  transform: translateY(-2px);
 }
 
 .tab-panel {
   display: block;
+  animation: fadeIn 0.3s ease-in-out;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.tab-panel h3 {
+  font-size: 2rem; /* Bigger than before */
+  font-weight: 700; /* Bold and strong */
+  text-align: center; /* Center the heading */
+  margin-bottom: 20px;
+  margin-top: 10px;
+  font-family: "Poppins", sans-serif;
+  color: #222; /* Dark gray for readability */
+  letter-spacing: 1px;
+  border-bottom: 3px solid #007bff; /* Accent underline */
+  display: inline-block; /* Makes underline just fit the text */
+  padding-bottom: 5px;
 }
