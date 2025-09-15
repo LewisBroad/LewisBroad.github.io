@@ -195,8 +195,15 @@ html {
 
     }
     .current-project h2{
-      color:#fff;
-      text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #fff;
+  letter-spacing: 1px;
+  border-bottom: 3px solid #007bff;
+  display: inline-block;
+  padding-bottom: 5px;
     }
      .dissertation-project{
       color:#fff;
@@ -206,10 +213,17 @@ html {
       box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
 
     }
-    .dissertation-project h2{
-      color:#fff;
-      text-align: center;
-    }
+.dissertation-project h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #fff;
+  letter-spacing: 1px;
+  border-bottom: 3px solid #007bff;
+  display: inline-block;
+  padding-bottom: 5px;
+}
     /* Skills Section */
     .skills {
       background-color: #f0f0f0;
@@ -482,17 +496,31 @@ html {
   border: none;
 }
 
-#dissertation-project .video-wrapper {
-  display: flex;
-  gap: 15px; /* Space between videos */
-  justify-content: center; /* Center them on the page */
-  flex-wrap: nowrap; /* Prevents wrapping */
+#dissertation-project .video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive columns */
+  gap: 20px; /* Space between videos */
+  margin-top: 20px;
 }
 
 #dissertation-project .video {
-  flex: 1; /* Makes both videos take equal space */
-  max-width: 50%; /* Ensures they don’t exceed half the container width */
-  height: auto; /* Maintains aspect ratio */
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#dissertation-project .video img {
+  width: 100%;
+  display: block;
+  border-radius: 12px;
+}
+
+#dissertation-project .video:hover {
+  transform: scale(1.03);
+  box-shadow: 0px 6px 14px rgba(0, 0, 0, 0.4);
 }
 
 #dissertation-project .video img {
@@ -611,10 +639,6 @@ html {
   display: block;
   animation: fadeIn 0.3s ease-in-out;
 }
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
 .tab-panel h3 {
   font-size: 2rem; /* Bigger than before */
   font-weight: 700; /* Bold and strong */
@@ -628,3 +652,92 @@ html {
   display: inline-block; /* Makes underline just fit the text */
   padding-bottom: 5px;
 }
+.video-tabs {
+  margin-top: 20px;
+}
+
+.video-tab-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.video-tab-btn {
+  background: #333;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.video-tab-btn:hover {
+  background: #555;
+  transform: translateY(-2px);
+}
+
+.video-tab-btn.active {
+  background: #007bff;
+}
+
+.video-tab-content {
+  text-align: center;
+}
+
+.video-panel {
+  display: none;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.video-panel.active {
+  display: block;
+}
+
+.video-panel p {
+  margin-top: 10px;
+  font-size: 1rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  color: #ddd;
+  line-height: 1.5;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.video-flex {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: flex-start;
+  justify-content: center;
+  flex-wrap: wrap; /* allows stacking on smaller screens */
+}
+
+.video-flex .video {
+  flex: 1 1 55%;
+  max-width: 700px;
+}
+
+.video-flex .video-description {
+  flex: 1 1 40%;
+    border-left: 3px solid rgba(255,255,255,0.1);
+  padding-left: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.video-flex .video-description p {
+  text-align: left;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #ddd;
+  margin: 0;
+}
+

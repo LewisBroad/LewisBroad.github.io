@@ -5,17 +5,22 @@ const observer = new IntersectionObserver((entries, observer) => {
       const videoWrapper = entry.target;
       const iframe = document.createElement('iframe');
       iframe.src = videoWrapper.getAttribute('data-src');
-      iframe.frameborder = '0';
-      iframe.allow = 'autoplay; encrypted-media; picture-in-picture';
-      iframe.allowfullscreen = true;
-      videoWrapper.innerHTML = ''; // Clear the placeholder
+      iframe.width = '100%';
+      iframe.height = '400';
+      iframe.frameBorder = '0';
+      iframe.allow =
+        'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+      iframe.allowFullscreen = true;
+
+      videoWrapper.innerHTML = ''; // Clear placeholder
       videoWrapper.appendChild(iframe);
-      observer.unobserve(videoWrapper); // Stop observing once the video is loaded
+      observer.unobserve(videoWrapper);
     }
   });
 }, {
-  threshold: 0.5 // Load video when 50% of the iframe is visible
+  threshold: 0.5 
 });
+
 
 
 
@@ -174,3 +179,41 @@ document.querySelectorAll(".tab-btn").forEach(button => {
     document.getElementById(tab).style.display = "block";
   });
 });
+document.querySelectorAll(".video-tab-btn").forEach(button => {
+  button.addEventListener("click", () => {
+    const videoId = button.dataset.video;
+
+    // Remove active state from all buttons and panels
+    document.querySelectorAll(".video-tab-btn").forEach(btn => btn.classList.remove("active"));
+    document.querySelectorAll(".video-panel").forEach(panel => {
+      panel.classList.remove("active");
+
+      // 🔴 Stop video playback when panel is hidden
+      const videoDiv = panel.querySelector(".video");
+      if (videoDiv) {
+        const thumbnail = `<img src="${videoDiv.querySelector('img')?.src || `https://img.youtube.com/vi/${videoDiv.dataset.src.split('/embed/')[1].split('?')[0]}/hqdefault.jpg`}" class="no-modal">`;
+        videoDiv.innerHTML = thumbnail; // Replace iframe with thumbnail
+      }
+    });
+
+    // Activate the selected tab
+    button.classList.add("active");
+    const activePanel = document.getElementById(videoId);
+    activePanel.classList.add("active");
+
+    // 🟢 Start playing the video for the active tab
+    const videoDiv = activePanel.querySelector(".video");
+    if (videoDiv) {
+      const iframe = document.createElement("iframe");
+      iframe.src = videoDiv.dataset.src;
+      iframe.width = "100%";
+      iframe.height = "400";
+      iframe.frameBorder = "0";
+      iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+      iframe.allowFullscreen = true;
+      videoDiv.innerHTML = ""; // Clear thumbnail
+      videoDiv.appendChild(iframe);
+    }
+  });
+});
+

@@ -195,25 +195,75 @@
   <button class="carousel-btn right">&#10095;</button>
 </div>
 
-  <!-- Project Video -->
-   <div class ="video-wrapper">
-    <div class= "video" data-src = "https://www.youtube.com/embed/XKvEVa3VewM?autoplay=1&mute=1&controls=0&loop=1&playlist=XKvEVa3VewM">
-    <img src = "https://img.youtube.com/vi/XKvEVa3VewM/hqdefault.jpg" class = "no-modal" alt="Coop game prototype">
-   </div>
-   </div>
-  <div class="video-wrapper">
-    <div class="video" data-src="https://www.youtube.com/embed/xGlTU7lryGQ?autoplay=1&mute=1&controls=0&loop=1&playlist=xGlTU7lryGQ">
-      <img src="https://img.youtube.com/vi/xGlTU7lryGQ/hqdefault.jpg" class="no-modal" alt="Coop Game Video">
-    </div>
-    <div class="video" data-src="https://www.youtube.com/embed/GpwNO42NDgM?autoplay=1&mute=1&controls=0&loop=1&playlist=GpwNO42NDgM">
-      <img src="https://img.youtube.com/vi/NEW_VIDEO_ID/hqdefault.jpg" class="no-modal" alt="Second Coop Game Video">
+<div class="video-tabs">
+  <!-- Tab Buttons -->
+  <div class="video-tab-buttons">
+    <button class="video-tab-btn active" data-video="video1">Multiplayer Test</button>
+    <button class="video-tab-btn" data-video="video2">First Testing</button>
+    <button class="video-tab-btn" data-video="video3">Teleportation Prototype</button>
+    <button class="video-tab-btn" data-video="video4">Shooter Prototype</button>
+  </div>
+
+  <!-- Tab Content -->
+  <div class="video-tab-content">
+    <div class="video-panel active" id="video1">
+  <div class="video-flex">
+<div class= "video" data-src = "https://www.youtube.com/embed/XKvEVa3VewM?autoplay=1&mute=1&controls=0&loop=1&playlist=XKvEVa3VewM"> 
+  <img src = "https://img.youtube.com/vi/XKvEVa3VewM/hqdefault.jpg" class = "no-modal" alt="Coop game prototype">
+</div>
+    <div class="video-description">
+      <p>This was the first external testing of the multiplayer functionality. I got two of my friends to playest the game to get a better understanding of any bugs, as well as overlooked features.
+        I got feedback from this test finding out some overlooked features that would've helped the players understand what they had to do. This feedback resulted in me adding highlighted surfaces to make it a bit more clear on the objective.
+      </p>
     </div>
   </div>
-  <div class="video-wrapper">
-    <div class="video" data-src="https://www.youtube.com/embed/K0ZMJIHOfSc?autoplay=1&mute=1&controls=0&loop=1&playlist=K0ZMJIHOfSc">
-      <img src="https://img.youtube.com/vi/K0ZMJIHOfSc/hqdefault.jpg" class="no-modal" alt="Coop Game Video">
+</div>
+
+
+    <div class="video-panel" id="video2">
+      <div class="video-flex">
+        <div class="video" data-src="https://www.youtube.com/embed/xGlTU7lryGQ?autoplay=1&mute=1&controls=0&loop=1&playlist=xGlTU7lryGQ"> 
+          <img src="https://img.youtube.com/vi/xGlTU7lryGQ/hqdefault.jpg" class="no-modal" alt="Coop Game Video">
+      </div>
+      <div class="video-description">
+      <p>This video shows off the first original test of my gameplay features. Including replication of moving platforms, as well as their state being altered by a replicated pressure pad</p>
+        </div>
+  </div>
+</div>
+
+    <div class="video-panel" id="video3">
+            <div class="video-flex">
+        <div class="video" data-src="https://www.youtube.com/embed/GpwNO42NDgM?autoplay=1&mute=1&controls=0&loop=1&playlist=GpwNO42NDgM"> 
+          <img src="https://img.youtube.com/vi/NEW_VIDEO_ID/hqdefault.jpg" class="no-modal" alt="Second Coop Game Video">
+      </div>
+      <div class="video-description">
+      <p>Here I demonstrate the first prototype for the teleporter character. The way this is used is that the player presses a button to activate a teleporting state and can see visually where they are teleporting to. 
+        A Boolean is used to determine whether the player was in this state or not and in the update function, it uses a line trace that is used to detect where the player is aiming at. 
+        This is the base trace for detecting the location but there is a second line trace after this that detects walls using a dot product of the location the returns. 
+        If the dot product returns under a certain amount, then the teleport is valid and the player is free to teleport to that location. <br>
+        An issue that came up was that the player was teleporting through the floor because the teleport would move the players centre to the location, but this was easily fixed by adding the player capsule’s half-height to the Y-axis. 
+        Finally allowing the character to be able to teleport through certain meshes, with that being glass, this requires the need to create a new trace channel so that the trace ignored certain collision presets. 
+        One was created for the teleporting trace that was blocked by everything but on glass it ignores the collision and allows the player to teleport through.</p>
+    </div>
+    </div>
+    </div>
+
+    <div class="video-panel" id="video4">
+            <div class="video-flex">
+        <div class="video" data-src="https://www.youtube.com/embed/K0ZMJIHOfSc?autoplay=1&mute=1&controls=0&loop=1&playlist=K0ZMJIHOfSc"> 
+          <img src="https://img.youtube.com/vi/K0ZMJIHOfSc/hqdefault.jpg" class="no-modal" alt="Coop Game Video">
+      </div>
+      <div class="video-description">
+      <p>This is a video showcasing the gun character. The bullets fired from this gun are able to interact with targets that start turning to open up a connected gate. 
+        These gates have a timer on them where if the value to fully open them is not met, the gate will start to close again.
+      </p>
+    </div>
+    </div>
     </div>
   </div>
+</div>
+
+
 
 
   <div id="myModal" class="modal">
